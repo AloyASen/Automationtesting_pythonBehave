@@ -1,6 +1,7 @@
 # the below code runs on selenium 4 
 
 from selenium import webdriver
+from selenium.webdriver.common.by import By as BY
 import time
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
@@ -13,8 +14,9 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 driver.maximize_window()
 #navigate to the url  
 driver.get("https://www.google.com/") 
-#identify the Google search text box and enter the value  
-driver.find_element('name',"q").send_keys("javatpoint")  
+#identify the Google search text box and enter the value 
+
+driver.find_element(BY.NAME,"q").send_keys("javatpoint")  
 time.sleep(3)  
 #click on the Google search button  
 driver.find_element('name',"btnK").send_keys(Keys.ENTER)  
